@@ -12,7 +12,8 @@ RUN adduser -H -D -g 'Gogs Git User' git -h /data/git -s /bin/bash && passwd -u 
 echo "export GOGS_CUSTOM=${GOGS_CUSTOM}" >> /etc/profile
 
 
-COPY ./content/ /gogs/
+COPY ./gogs /
+COPY ./start.sh /gogs/
 WORKDIR /gogs/
 
 # Configure Docker Container
