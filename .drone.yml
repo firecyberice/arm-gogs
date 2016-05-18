@@ -20,5 +20,5 @@ publish:
     file: Dockerfile.rpi
     repo: firecyberice/armhf-gogs
     tag:
-      - latest
-      - "0.9.13"
+#      - latest
+      - "0.9.13-rpi"

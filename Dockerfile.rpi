@@ -12,6 +12,7 @@ RUN chmod +x /usr/sbin/gosu \
 ENV GOGS_CUSTOM /data/gogs
 
 COPY ./gogs/ /app/gogs/
+COPY ./docker /app/gogs/docker
 WORKDIR /app/gogs/
 RUN ./docker/build.sh
 
