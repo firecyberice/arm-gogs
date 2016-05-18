@@ -5,9 +5,10 @@ build:
   commands:
     - apk update && apk add tar gzip curl
     - export VERSION=0.9.13
-    - export URL=https://dl.gogs.io/gogs_v${VERSION}_linux_arm.zip
+    - export URL=https://github.com/gogits/gogs/releases/download/v${VERSION}/linux_arm.zip
     - curl -L ${URL} > ./gogs.zip
     - unzip gogs.zip
+    - ls -la . */
 
 publish:
   docker:
@@ -16,6 +17,7 @@ publish:
     username: $$DOCKER_USER
     password: $$DOCKER_PASS
     email: $$DOCKER_EMAIL
+    file: Dockerfile.rpi
     repo: firecyberice/armhf-gogs
     tag:
       - latest
