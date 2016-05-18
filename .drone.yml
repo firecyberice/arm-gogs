@@ -1,15 +1,5 @@
 #debug: true
 
-build:
-  image: armdrone/drone-plugin-base
-  commands:
-    - apk update && apk add tar gzip curl
-    - export VERSION=0.9.13
-    - export URL=https://github.com/gogits/gogs/releases/download/v${VERSION}/linux_arm.zip
-    - curl -L ${URL} > ./gogs.zip
-    - unzip gogs.zip
-    - ls -la . */
-
 publish:
   docker:
 #    environment:

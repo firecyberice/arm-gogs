@@ -11,13 +11,13 @@ RUN chmod +x /usr/sbin/gosu \
 
 ENV GOGS_CUSTOM /data/gogs
 
-COPY ./gogs/ /app/gogs/
-COPY ./docker /app/gogs/docker
 WORKDIR /app/gogs/
+RUN git clone --branch v0.9.13 https://github.com/gogits/gogs .
+
 RUN ./docker/build.sh
 
 # Configure LibC Name Service
-COPY docker/nsswitch.conf /etc/nsswitch.conf
+RUN cp docker/nsswitch.conf /etc/nsswitch.conf
 
 # Configure Docker Container
 VOLUME ["/data"]
