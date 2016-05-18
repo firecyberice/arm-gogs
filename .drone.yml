@@ -4,7 +4,7 @@ build:
   image: armdrone/drone-plugin-base
   commands:
     - apk update && apk add tar gzip curl
-    - export VERSION=0.8.10
+    - export VERSION=0.9.13
     - export URL=https://dl.gogs.io/gogs_v${VERSION}_linux_arm.zip
     - curl -L ${URL} > ./gogs.zip
     - unzip gogs.zip
@@ -17,6 +17,6 @@ publish:
     password: $$DOCKER_PASS
     email: $$DOCKER_EMAIL
     repo: firecyberice/armhf-gogs
-    tag: 
+    tag:
       - latest
-      - "0.8.10"
+      - "0.9.13"
